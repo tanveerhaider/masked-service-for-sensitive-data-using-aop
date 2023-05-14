@@ -61,7 +61,7 @@ public class MaskingAdvice {
         try {
             value = field.get(responseObject);
             if (value instanceof String) {
-                String maskedValue = MaskData.maskSensitiveData(String.valueOf(value));
+                String maskedValue = MaskData.mask(String.valueOf(value));
                 field.set(responseObject, maskedValue);
             }
         } catch (IllegalAccessException e) {
