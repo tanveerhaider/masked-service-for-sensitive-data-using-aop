@@ -27,4 +27,14 @@ public class MaskData {
     private static String findMaskedString(int count){
         return "*".repeat(count);
     }
+
+    /**
+     * Mask data as per regex Logic
+     * @param sensitiveData
+     * @return
+     */
+    public static String mask(String sensitiveData){
+        return sensitiveData.replaceAll(".(?=.{4})", "x");
+    }
+
 }
